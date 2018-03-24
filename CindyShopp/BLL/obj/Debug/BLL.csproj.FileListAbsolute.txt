@@ -1,0 +1,10 @@
+D:\FPT\SE\C#.NEt\PROJECT2\CindyShopp\BLL\bin\Debug\BLL.dll
+D:\FPT\SE\C#.NEt\PROJECT2\CindyShopp\BLL\bin\Debug\BLL.pdb
+D:\FPT\SE\C#.NEt\PROJECT2\CindyShopp\BLL\bin\Debug\DAL.dll
+D:\FPT\SE\C#.NEt\PROJECT2\CindyShopp\BLL\bin\Debug\DAL.pdb
+D:\FPT\SE\C#.NEt\PROJECT2\CindyShopp\BLL\bin\Debug\DAL.dll.config
+D:\FPT\SE\C#.NEt\PROJECT2\CindyShopp\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+D:\FPT\SE\C#.NEt\PROJECT2\CindyShopp\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+D:\FPT\SE\C#.NEt\PROJECT2\CindyShopp\BLL\obj\Debug\BLL.csproj.CopyComplete
+D:\FPT\SE\C#.NEt\PROJECT2\CindyShopp\BLL\obj\Debug\BLL.dll
+D:\FPT\SE\C#.NEt\PROJECT2\CindyShopp\BLL\obj\Debug\BLL.pdb

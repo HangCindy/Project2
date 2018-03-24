@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CindyShop" Class="ModelDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=CINDY;Initial Catalog=CindyShop;Persist Security Info=True;User ID=sa" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="CindyShopConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tblOrder" Member="tblOrders">
+    <Type Name="tblOrder">
+      <Column Name="OrderID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CustomerName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ContactPerson" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Tel" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PaymentType" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="TotalAmount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="OrderDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="tblOrder_tblOrderDetail" Member="tblOrderDetails" ThisKey="OrderID" OtherKey="OrderID" Type="tblOrderDetail" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblProducts" Member="tblProducts">
+    <Type Name="tblProduct">
+      <Column Name="ProductID" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ProductName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CateID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ImagePath" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Information" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Introduction" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Parameter" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="UnitInStock" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UnitOnOrder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UnitPrice" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Viewed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Bought" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblProduct_tblOrderDetail" Member="tblOrderDetails" ThisKey="ProductID" OtherKey="ProductID" Type="tblOrderDetail" />
+      <Association Name="tblProductCategory_tblProduct" Member="tblProductCategory" ThisKey="CateID" OtherKey="CateID" Type="tblProductCategory" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblOrderDetail" Member="tblOrderDetails">
+    <Type Name="tblOrderDetail">
+      <Column Name="OrderID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ProductID" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="tblOrder_tblOrderDetail" Member="tblOrder" ThisKey="OrderID" OtherKey="OrderID" Type="tblOrder" IsForeignKey="true" />
+      <Association Name="tblProduct_tblOrderDetail" Member="tblProduct" ThisKey="ProductID" OtherKey="ProductID" Type="tblProduct" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblProductCategories" Member="tblProductCategories">
+    <Type Name="tblProductCategory">
+      <Column Name="CateID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CateParentsID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CateName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="tblProductCategory_tblProduct" Member="tblProducts" ThisKey="CateID" OtherKey="CateID" Type="tblProduct" />
+      <Association Name="tblProductCategory_tblProductCategory" Member="tblProductCategories" ThisKey="CateID" OtherKey="CateParentsID" Type="tblProductCategory" />
+      <Association Name="tblProductCategory_tblProductCategory" Member="tblProductCategory1" ThisKey="CateParentsID" OtherKey="CateID" Type="tblProductCategory" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,6 @@
+D:\FPT\SE\C#.NEt\PROJECT2\CindyShopp\DAL\bin\Debug\DAL.dll.config
+D:\FPT\SE\C#.NEt\PROJECT2\CindyShopp\DAL\bin\Debug\DAL.dll
+D:\FPT\SE\C#.NEt\PROJECT2\CindyShopp\DAL\bin\Debug\DAL.pdb
+D:\FPT\SE\C#.NEt\PROJECT2\CindyShopp\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\FPT\SE\C#.NEt\PROJECT2\CindyShopp\DAL\obj\Debug\DAL.dll
+D:\FPT\SE\C#.NEt\PROJECT2\CindyShopp\DAL\obj\Debug\DAL.pdb
